@@ -13,6 +13,12 @@ require('dotenv').config(); // Load environment variables
 mercadopago.configurations = { access_token: process.env.MERCADOTOKEN };
 
 
+app.get('/', (req, res) => {
+  res.send('Welcome to my Mercado Pago Integration!');
+});
+
+
+
 // Example route for creating a preference
 app.post('/create_preference', async (req, res) => {
   const { name, email, phone, address } = req.body;
